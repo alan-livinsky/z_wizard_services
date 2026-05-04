@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<tryton>
+    <data>
+        <record model="ir.ui.view" id="gnuhealth_create_service_start_view">
+            <field name="model">gnuhealth.create_service.start</field>
+            <field name="type">form</field>
+            <field name="name">create_service_start_form</field>
+        </record>
+
+        <record model="ir.action.wizard" id="act_create_service_wizard">
+            <field name="name">Crear servicio</field>
+            <field name="wiz_name">gnuhealth.create_service.wizard</field>
+        </record>
+
+        <record model="ir.action.act_window" id="action_view_service_created">
+            <field name="name">Servicios</field>
+            <field name="res_model">product.product</field>
+            <field name="domain" eval="[('type', '=', 'service')]" pyson="1"/>
+        </record>
+
+        <record model="ir.action.act_window.view"
+                id="action_view_service_created_tree">
+            <field name="sequence" eval="10"/>
+            <field name="view" ref="product.product_view_tree"/>
+            <field name="act_window" ref="action_view_service_created"/>
+        </record>
+
+        <record model="ir.action.act_window.view"
+                id="action_view_service_created_form">
+            <field name="sequence" eval="20"/>
+            <field name="view" ref="product.product_view_form"/>
+            <field name="act_window" ref="action_view_service_created"/>
+        </record>
+
+        <menuitem id="create_service_menu"
+                action="act_create_service_wizard"
+                parent="health_services.gnuhealth_services_menu"
+                sequence="5"/>
+    </data>
+</tryton>

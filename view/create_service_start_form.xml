@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<form>
+    <group colspan="4" col="4" string="Principal" id="service_main">
+        <label name="name"/>
+        <field name="name" colspan="3"/>
+        <label name="list_price"/>
+        <field name="list_price"/>
+        <label name="active"/>
+        <field name="active"/>
+    </group>
+
+    <group colspan="4" col="4" string="Copago" id="service_copago">
+        <label name="is_copago_service"/>
+        <field name="is_copago_service"/>
+        <label name="copago_individual_ticket"/>
+        <field name="copago_individual_ticket"/>
+    </group>
+</form>
